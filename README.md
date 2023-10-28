@@ -151,10 +151,10 @@ ls.show()
 
 2.工作流程
 
-![](C:\Users\86173\Desktop\工作流程.png)
+![](https://i.postimg.cc/2jKSWtvj/image.png)
 
 3.虚拟机工作原理
-![](C:\Users\86173\Desktop\vmwork.png)
+![](https://i.postimg.cc/fypWh3ZS/vmwork.png)
 
 虚拟机使用操作数栈作为临时变量的存放位置  
 
