@@ -1,0 +1,75 @@
+BODY_MOUDLE -> class VAR { BODY_CLASS }
+        |   def VAR(EXPR,...) { BODY_FUNC }
+        |   while EXPR { BODY_LOOP }
+        |   for VAR in EXPR   { BODY_LOOP }
+        |   if EXPR { BODY_IF } elif... else ...
+        |   OPERATOR
+
+
+OPERATOR -> CONTROL
+        | VAR (=/+=/-=/div=/*=) EXPR
+        | EXPR
+
+CONTROL -> break 
+        |  continue
+        |  return
+
+
+VAR     ->  var
+        |   VAR.var
+        |   VAR[int/str]
+
+
+EXPR -> | EXPR_0
+
+EXPR_0 -> | EXPR_1 (and/or) EXPR_0
+          | EXPR_1
+
+EXPR_1 -> | EXPR_2 (==/!=/</<=/>/>=) EXPR_2
+          | EXPR_2
+
+EXPR_2 -> | EXPR_3 (+/-) EXPR_2
+          | EXPR_3
+
+EXPR_3 -> | EXPR_4 (*/div/^) EXPR_3
+          | EXPR_4
+
+EXPR_4 -> | (EXPR_0)
+          | not EXPR_0
+          | VALUE
+
+
+VALUE  ->   (int/bool/str/null/[VALUE,...])
+            | CALL
+            | VAR
+
+CALL ->   | VAR(VALUE,VALUE...)
+
+
+BODY_FUNC  -> while EXPR_BOOL { BODY_LOOP }
+            | for VAR in EXPR   { BODY_LOOP }
+            | if EXPR_BOOL { BODY_IF } elif... else ...
+            | OPERATOR
+
+
+BODY_CLASS -> def VAR(var,...) { BODY_FUNC }
+            | return VALUE
+            | OPERATOR
+
+
+BODY_LOOP-> | while EXPR_BOOL { BODY_LOOP }
+            | for VAR in EXPR   { BODY_LOOP }
+            | if EXPR_BOOL { BODY_IF } elif... else ...
+            | continue
+            | break
+            | return VALUE
+            | OPERATOR
+
+
+BODY_IF ->  | while EXPR { BODY_LOOP }
+            | for VAR in EXPR   { BODY_LOOP }
+            | if EXPR { BODY_IF } elif... else ...
+            | continue
+            | break
+            | return VALUE
+            | OPERATOR
