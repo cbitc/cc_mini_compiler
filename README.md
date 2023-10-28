@@ -154,7 +154,6 @@ ls.show()
 ![](https://i.postimg.cc/2jKSWtvj/image.png)
 
 3.虚拟机工作原理
-![](https://i.postimg.cc/fypWh3ZS/vmwork.png)
 
 虚拟机使用操作数栈作为临时变量的存放位置  
 
@@ -186,7 +185,7 @@ LOAD_NAME,STORE_NAME 的操作数为数据在变量表中的索引.
 
 以下用一小段代码演示流程
 
-![](C:\Users\86173\Desktop\vmwork.png)
+![](https://i.postimg.cc/fypWh3ZS/vmwork.png)
 
 4.目标语言特性和目前完成情况
 
